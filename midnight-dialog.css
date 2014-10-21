@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box; }
+
+:host {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+#content-wrapper {
+  max-width: 80vw;
+  max-height: 80vh;
+  position: relative; }
+  #content-wrapper .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12mm;
+    height: 12mm;
+    background: transparent none;
+    border: none;
+    text-indent: -9999px;
+    line-height: 12mm;
+    color: black;
+    font-size: 1.728em;
+    text-shadow: 0 0 0.3rem rgba(255, 255, 255, 0.3);
+    cursor: pointer; }
+    #content-wrapper .close:after {
+      content: '\d7';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      text-indent: 0; }
+
+#content {
+  background-color: white;
+  overflow: auto; }

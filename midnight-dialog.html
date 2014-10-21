@@ -1,0 +1,25 @@
+<link rel="import" href="../polymer/polymer.html" />
+<polymer-element name="midnight-dialog">
+    <template>
+        <link rel="stylesheet" href="midnight-dialog.css" />
+        <div id="content-wrapper">
+            <button class="close" on-click="{{close}}">Close</button>
+            <div id="content">
+                <content></content>
+            </div>
+        </div>
+    </template>
+    <script>
+        Polymer('midnight-dialog', {
+            ready: function () {
+                this.addEventListener('click', this.close);
+                this.shadowRoot.getElementById('content-wrapper').addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+            },
+            close: function () {
+                this.parentElement.removeChild(this);
+            }
+        });
+    </script>
+</polymer-element>
